@@ -18,8 +18,7 @@ import java.text.DecimalFormat;
 
 public class CalculoIMCActivity extends AppCompatActivity {
 
-    private Button btnSet;
-    private Button btnReset;
+    // Declaração dos elementos da interface (View)
     private Button btnFechar;
     private EditText campoAltura;
     private EditText campoPeso;
@@ -36,21 +35,20 @@ public class CalculoIMCActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Vinculando os elementos com os Views
+        campoAltura = findViewById(R.id.editTextAltura);
+        campoPeso = findViewById(R.id.editTextPeso);
         btnFechar = findViewById(R.id.btnFechar);
 
+        // Ao clicar no botão btnFechar vai fechar a tela e voltar para MainActivity
         btnFechar.setOnClickListener(view -> {
             finish();
         });
 
     }
 
+    // Função para calcular o IMC e levar a tela de cada classificação
     public void calculaIMC(View view) {
-
-        // Vinculando os elementos com os Views
-        btnSet = findViewById(R.id.btnSet);
-        btnReset = findViewById(R.id.btnReset);
-        campoAltura = findViewById(R.id.editTextAltura);
-        campoPeso = findViewById(R.id.editTextPeso);
 
         // Variaveis para recuperar (get) e converter em String:
         String altura = campoAltura.getText().toString();
@@ -136,14 +134,10 @@ public class CalculoIMCActivity extends AppCompatActivity {
 
         }
 
-
-
     }
 
-    public void limparCampo() {
-        campoAltura = findViewById(R.id.editTextAltura);
-        campoPeso = findViewById(R.id.editTextPeso);
-
+    // Função para limpar os campos de Altura e Peso
+    public void limparCampo(View view) {
         campoAltura.setText("");
         campoPeso.setText("");
     }

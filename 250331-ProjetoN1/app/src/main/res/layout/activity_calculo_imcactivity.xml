@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/appColorBranco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CalculoIMCActivity">
@@ -21,7 +22,7 @@
         app:srcCompat="@drawable/logo_fecap" />
 
     <Button
-        android:id="@+id/btnSet"
+        android:id="@+id/btnCalcularIMC"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -93,7 +94,7 @@
         android:hint="@string/textHintPeso"
         android:inputType="number|numberDecimal"
         android:padding="10dp"
-        android:background="@color/appColorBranco"
+        android:background="@color/appColorCinzaClaro"
         android:textColorHint="@color/appColorCinzaEscuro"
         android:textColor="@color/appColorVerdeEscuro"
         android:textSize="20sp"
@@ -116,7 +117,7 @@
         android:hint="@string/textHintAltura"
         android:inputType="number|numberDecimal"
         android:padding="10dp"
-        android:background="@color/appColorBranco"
+        android:background="@color/appColorCinzaClaro"
         android:textColorHint="@color/appColorCinzaEscuro"
         android:textColor="@color/appColorVerdeEscuro"
         android:textSize="20sp"

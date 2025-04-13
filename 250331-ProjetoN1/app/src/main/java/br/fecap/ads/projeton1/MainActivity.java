@@ -12,9 +12,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Instanciamento dos elementos utilizados no View:
+    // Declaração dos elementos da interface (View)
     private Button btnT1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
