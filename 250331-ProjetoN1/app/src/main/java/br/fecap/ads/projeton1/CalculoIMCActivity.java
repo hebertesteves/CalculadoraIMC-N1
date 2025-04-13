@@ -51,13 +51,41 @@ public class CalculoIMCActivity extends AppCompatActivity {
     public void calculaIMC(View view) {
 
         // Variaveis para recuperar (get) e converter em String:
-        String altura = campoAltura.getText().toString();
-        String peso = campoPeso.getText().toString();
+        String altura = campoAltura.getText().toString().trim();
+        String peso = campoPeso.getText().toString().trim();
+
+        // Verifica se o campo de peso está vazio, caso esteja ele vai usar um return para o usuario não prosseguir sem digitar
+        if (peso.isEmpty()) {
+            campoPeso.setError("Informe seu peso");
+            campoPeso.requestFocus(); // Coloca o foco no campo para o usuário digitar
+            return;
+        }
+
+        // Verifica se o campo de altura está vazio, caso esteja ele vai usar um return para o usuario não prosseguir sem digitar
+        if (altura.isEmpty()) {
+            campoAltura.setError("Informe sua altura");
+            campoAltura.requestFocus(); // Coloca o foco no campo para o usuário digitar
+            return;
+        }
 
         // Converter os dados para Numerico:
         Double numAltura = Double.parseDouble(altura);
         Double numPeso = Double.parseDouble(peso);
         Double numImc = numPeso / (numAltura * numAltura);
+
+        // Verifica se o peso é valido
+        if (numPeso <= 0 || numPeso >= 1000) {
+            campoPeso.setError("Peso inválido");
+            campoPeso.requestFocus(); // Coloca o foco no campo para o usuário digitar
+            return;
+        }
+
+        // Verifica se a altura é valida
+        if (numAltura <= 0 || numAltura > 3) {
+            campoAltura.setError("Altura inválida");
+            campoAltura.requestFocus(); // Coloca o foco no campo para o usuário digitar
+            return;
+        }
 
 
         if (numImc < 18.5) { // Abaixo do peso
